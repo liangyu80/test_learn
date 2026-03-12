@@ -5,11 +5,20 @@ This file provides guidance for AI assistants working with the `test_learn` repo
 ## Repository Overview
 
 - **Repository**: `liangyu80/test_learn`
-- **Status**: Newly initialized repository (bootstrapping phase)
+- **Language**: Python 3.8+
+- **Primary Framework**: PyTorch
 
 ## Project Structure
 
-This repository is currently empty and being set up. As the project grows, this section should be updated to reflect the directory layout and key files.
+```
+test_learn/
+├── CLAUDE.md                            # AI assistant guidance
+└── speculative_vs_multitoken/           # LLM 加速技术对比项目
+    ├── README.md                        # 项目文档（中文）
+    ├── speculative_decoding.py          # 投机采样实现
+    ├── multitoken_prediction.py         # 多 Token 预测实现
+    └── compare.py                       # 对比实验脚本
+```
 
 ## Development Workflow
 
@@ -35,15 +44,24 @@ git fetch origin <branch-name>
 
 ## Code Conventions
 
-_To be updated as the project establishes its conventions (language, framework, linting, testing, etc.)._
-
-## Testing
-
-_To be updated once a test framework is chosen and configured._
+- Language: Python, with Chinese comments for educational content
+- Deep learning framework: PyTorch
+- Code should include detailed inline comments, especially for key algorithms and loss functions
+- Each module should have a standalone `demo_*()` function and be runnable as `__main__`
 
 ## Build & Run
 
-_To be updated once build tooling is configured._
+```bash
+# Install dependencies
+pip install torch
+
+# Run individual modules
+python speculative_vs_multitoken/speculative_decoding.py
+python speculative_vs_multitoken/multitoken_prediction.py
+
+# Run comparison experiment
+python speculative_vs_multitoken/compare.py
+```
 
 ## Key Notes for AI Assistants
 
