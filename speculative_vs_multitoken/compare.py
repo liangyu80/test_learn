@@ -85,7 +85,15 @@ def run_comparison():
     # 实验设置
     # ===========================
     torch.manual_seed(42)
-    device = torch.device("cpu")
+
+    # 自动选择最佳设备 (MPS > CUDA > CPU)
+    if torch.backends.mps.is_available():
+        device = torch.device("mps")
+    elif torch.cuda.is_available():
+        device = torch.device("cuda")
+    else:
+        device = torch.device("cpu")
+    print(f"\n使用设备: {device}")
 
     VOCAB_SIZE = 500
     SEQ_LEN = 32

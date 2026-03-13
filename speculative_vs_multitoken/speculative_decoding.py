@@ -517,7 +517,15 @@ def demo_speculative_decoding():
     print("=" * 70)
 
     torch.manual_seed(42)
-    device = torch.device("cpu")
+
+    # 自动选择最佳设备
+    if torch.backends.mps.is_available():
+        device = torch.device("mps")
+    elif torch.cuda.is_available():
+        device = torch.device("cuda")
+    else:
+        device = torch.device("cpu")
+    print(f"\n使用设备: {device}")
 
     vocab_size = 500
     seq_len = 32

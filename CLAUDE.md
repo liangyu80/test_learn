@@ -19,11 +19,16 @@ test_learn/
 │   ├── multitoken_prediction.py         # 多 Token 预测实现
 │   └── compare.py                       # 对比实验脚本
 └── RL/                                  # 强化学习项目
-    └── ppo/                             # PPO-RLHF 训练 LLM
-        ├── README.md                    # PPO 算法文档（中文）
-        ├── model.py                     # 轻量 GPT 模型 (Actor/Critic/Reward)
-        ├── ppo_trainer.py               # PPO 训练器 (GAE, Clip, KL)
-        └── train.py                     # 主训练脚本 (SFT + PPO)
+    ├── ppo/                             # PPO-RLHF 训练 LLM
+    │   ├── README.md                    # PPO 算法文档（中文）
+    │   ├── model.py                     # 轻量 GPT 模型 (Actor/Critic/Reward)
+    │   ├── ppo_trainer.py               # PPO 训练器 (GAE, Clip, KL)
+    │   └── train.py                     # 主训练脚本 (SFT + PPO)
+    └── grpo/                            # GRPO 训练 LLM (无需 Critic)
+        ├── README.md                    # GRPO 算法文档（中文）
+        ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
+        ├── grpo_trainer.py              # GRPO 训练器 (组采样、相对优势)
+        └── train.py                     # 主训练脚本 (SFT + GRPO)
 ```
 
 ## Development Workflow
@@ -70,6 +75,9 @@ python speculative_vs_multitoken/compare.py
 
 # Run PPO-RLHF training
 cd RL/ppo && python train.py
+
+# Run GRPO training
+cd RL/grpo && python train.py
 ```
 
 ## Key Notes for AI Assistants
