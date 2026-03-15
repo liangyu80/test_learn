@@ -31,6 +31,11 @@ test_learn/
 │   ├── vae.py                           # 变分自编码器 (VAE) 实现
 │   ├── gan.py                           # 生成对抗网络 (GAN) 实现
 │   └── compare.py                       # 对比实验脚本
+├── diffusion/                           # 扩散模型 (DDPM & DDIM)
+│   ├── README.md                        # 项目文档（中文）
+│   ├── ddpm.py                          # DDPM 实现 (噪声调度 + 去噪网络)
+│   ├── ddim.py                          # DDIM 加速采样器
+│   └── train.py                         # 训练脚本 + 对比实验
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -108,6 +113,9 @@ cd titans && python train.py
 
 # Run RLVR training
 cd RL/rlvr && python train.py
+
+# Run Diffusion model (DDPM + DDIM)
+cd diffusion && python train.py
 ```
 
 ## Key Notes for AI Assistants
