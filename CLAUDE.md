@@ -18,6 +18,14 @@ test_learn/
 │   ├── speculative_decoding.py          # 投机采样实现
 │   ├── multitoken_prediction.py         # 多 Token 预测实现
 │   └── compare.py                       # 对比实验脚本
+├── gated_attention/                     # 门控注意力对比项目
+│   ├── README.md                        # 项目文档（中文）
+│   ├── model.py                         # GAU / Sigmoid-Gated / Standard 注意力
+│   └── train.py                         # 对比训练脚本
+├── titans/                              # Titans 长期记忆项目
+│   ├── model.py                         # MAC 模型 (Memory As Context)
+│   ├── neural_memory.py                 # 神经长期记忆模块 (NMM)
+│   └── train.py                         # 训练演示脚本
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -78,6 +86,12 @@ cd RL/ppo && python train.py
 
 # Run GRPO training
 cd RL/grpo && python train.py
+
+# Run Gated Attention comparison
+cd gated_attention && python train.py
+
+# Run Titans MAC training
+cd titans && python train.py
 ```
 
 ## Key Notes for AI Assistants
