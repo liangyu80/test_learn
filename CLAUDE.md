@@ -26,6 +26,11 @@ test_learn/
 │   ├── model.py                         # MAC 模型 (Memory As Context)
 │   ├── neural_memory.py                 # 神经长期记忆模块 (NMM)
 │   └── train.py                         # 训练演示脚本
+├── vae_vs_gan/                          # VAE vs GAN 生成模型对比
+│   ├── README.md                        # 项目文档（中文）
+│   ├── vae.py                           # 变分自编码器 (VAE) 实现
+│   ├── gan.py                           # 生成对抗网络 (GAN) 实现
+│   └── compare.py                       # 对比实验脚本
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -85,6 +90,9 @@ python speculative_vs_multitoken/multitoken_prediction.py
 
 # Run comparison experiment
 python speculative_vs_multitoken/compare.py
+
+# Run VAE vs GAN comparison
+cd vae_vs_gan && python compare.py
 
 # Run PPO-RLHF training
 cd RL/ppo && python train.py
