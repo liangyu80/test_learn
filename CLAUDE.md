@@ -32,11 +32,16 @@ test_learn/
     │   ├── model.py                     # 轻量 GPT 模型 (Actor/Critic/Reward)
     │   ├── ppo_trainer.py               # PPO 训练器 (GAE, Clip, KL)
     │   └── train.py                     # 主训练脚本 (SFT + PPO)
-    └── grpo/                            # GRPO 训练 LLM (无需 Critic)
-        ├── README.md                    # GRPO 算法文档（中文）
+    ├── grpo/                            # GRPO 训练 LLM (无需 Critic)
+    │   ├── README.md                    # GRPO 算法文档（中文）
+    │   ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
+    │   ├── grpo_trainer.py              # GRPO 训练器 (组采样、相对优势)
+    │   └── train.py                     # 主训练脚本 (SFT + GRPO)
+    └── rlvr/                            # RLVR 训练 LLM (可验证奖励)
+        ├── README.md                    # RLVR 算法文档（中文）
         ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
-        ├── grpo_trainer.py              # GRPO 训练器 (组采样、相对优势)
-        └── train.py                     # 主训练脚本 (SFT + GRPO)
+        ├── rlvr_trainer.py              # RLVR 训练器 (组采样、验证器、PPO-Clip)
+        └── train.py                     # 主训练脚本 (SFT + RLVR)
 ```
 
 ## Development Workflow
@@ -92,6 +97,9 @@ cd gated_attention && python train.py
 
 # Run Titans MAC training
 cd titans && python train.py
+
+# Run RLVR training
+cd RL/rlvr && python train.py
 ```
 
 ## Key Notes for AI Assistants
