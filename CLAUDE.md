@@ -43,6 +43,11 @@ test_learn/
 │   ├── shortcut_model.py                # Shortcut Model (自蒸馏1步生成)
 │   ├── dynamic_dit.py                   # DiT + DyDiT (动态Transformer)
 │   └── train.py                         # 统一对比实验
+├── nerf_3dgs/                           # NeRF vs 3DGS 神经3D表示
+│   ├── README.md                        # 项目文档（中文）
+│   ├── nerf.py                          # NeRF 实现 (位置编码+MLP+体渲染)
+│   ├── gaussian_splatting.py            # 3DGS 实现 (高斯点云+光栅化)
+│   └── compare.py                       # 对比实验脚本
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -126,6 +131,9 @@ cd diffusion && python train.py
 
 # Run Advanced Diffusion models
 cd diffusion_advanced && python train.py
+
+# Run NeRF vs 3DGS comparison
+cd nerf_3dgs && python compare.py
 ```
 
 ## Key Notes for AI Assistants
