@@ -36,6 +36,13 @@ test_learn/
 │   ├── ddpm.py                          # DDPM 实现 (噪声调度 + 去噪网络)
 │   ├── ddim.py                          # DDIM 加速采样器
 │   └── train.py                         # 训练脚本 + 对比实验
+├── diffusion_advanced/                  # 前沿扩散模型算法
+│   ├── README.md                        # 项目文档（中文）
+│   ├── flow_matching.py                 # Flow Matching (Rectified Flow)
+│   ├── consistency_model.py             # Consistency Model (1-2步生成)
+│   ├── shortcut_model.py                # Shortcut Model (自蒸馏1步生成)
+│   ├── dynamic_dit.py                   # DiT + DyDiT (动态Transformer)
+│   └── train.py                         # 统一对比实验
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -116,6 +123,9 @@ cd RL/rlvr && python train.py
 
 # Run Diffusion model (DDPM + DDIM)
 cd diffusion && python train.py
+
+# Run Advanced Diffusion models
+cd diffusion_advanced && python train.py
 ```
 
 ## Key Notes for AI Assistants
