@@ -59,11 +59,18 @@ test_learn/
     │   ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
     │   ├── grpo_trainer.py              # GRPO 训练器 (组采样、相对优势)
     │   └── train.py                     # 主训练脚本 (SFT + GRPO)
-    └── rlvr/                            # RLVR 训练 LLM (可验证奖励)
-        ├── README.md                    # RLVR 算法文档（中文）
-        ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
-        ├── rlvr_trainer.py              # RLVR 训练器 (组采样、验证器、PPO-Clip)
-        └── train.py                     # 主训练脚本 (SFT + RLVR)
+    ├── rlvr/                            # RLVR 训练 LLM (可验证奖励)
+    │   ├── README.md                    # RLVR 算法文档（中文）
+    │   ├── model.py                     # 轻量 GPT 模型 (~1M 参数)
+    │   ├── rlvr_trainer.py              # RLVR 训练器 (组采样、验证器、PPO-Clip)
+    │   └── train.py                     # 主训练脚本 (SFT + RLVR)
+    └── classic/                         # 经典表格型 RL (DP/MC/TD)
+        ├── README.md                    # 项目文档（中文）
+        ├── env.py                       # GridWorld 环境 (确定性/随机性)
+        ├── dp.py                        # 策略迭代 & 价值迭代 (动态规划)
+        ├── mc.py                        # 蒙特卡洛方法 (First/Every-Visit)
+        ├── td.py                        # SARSA, Q-Learning, n-step TD, TD(λ)
+        └── train.py                     # 统一对比实验
 ```
 
 ## Development Workflow
@@ -134,6 +141,9 @@ cd diffusion_advanced && python train.py
 
 # Run NeRF vs 3DGS comparison
 cd nerf_3dgs && python compare.py
+
+# Run Classic Tabular RL comparison
+cd RL/classic && python train.py
 ```
 
 ## Key Notes for AI Assistants
