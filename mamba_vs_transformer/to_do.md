@@ -1,0 +1,4 @@
+- 讲一下RNN、Transformer的主要区别，已经Mamba是如何平衡RNN和Transformer的计算量
+- 搜集一下其他的Linear Transformer方法，比较一下和Mamba的不同
+- 仿造Qwen-Next模型，写一段代码展示Transformer和Mamba是如何结合在一个模型中
+- 
