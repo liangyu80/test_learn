@@ -58,6 +58,10 @@ test_learn/
 │   ├── README.md                        # 项目文档（中文）
 │   ├── activations.py                   # 所有激活函数实现 + FFN 模块
 │   └── compare.py                       # 对比实验 (数值/梯度/训练/速度/LLM)
+├── positional_encoding/                 # 位置编码全面对比 (9 种)
+│   ├── README.md                        # 项目文档（中文）
+│   ├── positional_encoding.py           # 所有位置编码实现 + LM 包装器
+│   └── compare.py                       # 对比实验 (收敛/速度/外推/位置任务)
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -160,6 +164,9 @@ cd RL/classic && python train.py
 
 # Run Activation Functions comparison
 cd activations && python compare.py
+
+# Run Positional Encoding comparison
+cd positional_encoding && python compare.py
 ```
 
 ## Key Notes for AI Assistants
