@@ -66,6 +66,10 @@ test_learn/
 │   ├── README.md                        # 项目文档（中文）
 │   ├── positional_encoding.py           # 所有位置编码实现 + LM 包装器
 │   └── compare.py                       # 对比实验 (收敛/速度/外推/位置任务)
+├── diffusion_llm/                       # Diffusion LLM 离散扩散语言模型
+│   ├── README.md                        # 项目文档（中文）
+│   ├── diffusion_llm.py                 # 三种扩散方法 (吸收态/多项式/嵌入)
+│   └── train.py                         # 训练与对比实验 (5组实验)
 └── RL/                                  # 强化学习项目
     ├── ppo/                             # PPO-RLHF 训练 LLM
     │   ├── README.md                    # PPO 算法文档（中文）
@@ -171,6 +175,12 @@ cd activations && python compare.py
 
 # Run Positional Encoding comparison
 cd positional_encoding && python compare.py
+
+# Run Diffusion LLM demo
+python diffusion_llm/diffusion_llm.py
+
+# Run Diffusion LLM experiments
+python diffusion_llm/train.py
 ```
 
 ## Key Notes for AI Assistants
