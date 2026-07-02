@@ -43,6 +43,10 @@ test_learn/
 │   ├── shortcut_model.py                # Shortcut Model (自蒸馏1步生成)
 │   ├── dynamic_dit.py                   # DiT + DyDiT (动态Transformer)
 │   └── train.py                         # 统一对比实验
+├── flow_map_matching/                   # Flow Map Matching (流映射匹配)
+│   ├── README.md                        # 项目文档（中文）
+│   ├── flow_map.py                      # 流映射 X_{s,t} + LFMM 目标 + 速度场基线
+│   └── compare.py                       # 与经典 Flow Matching 对比 + 可视化
 ├── mamba_vs_transformer/                # Mamba vs Transformer 混合架构
 │   ├── README.md                        # 项目文档（中文）
 │   ├── mamba.py                         # Mamba S6 选择性状态空间模型
@@ -160,6 +164,9 @@ cd diffusion && python train.py
 
 # Run Advanced Diffusion models
 cd diffusion_advanced && python train.py
+
+# Run Flow Map Matching comparison
+cd flow_map_matching && python compare.py
 
 # Run Mamba vs Transformer comparison
 cd mamba_vs_transformer && python compare.py
